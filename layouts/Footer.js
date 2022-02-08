@@ -10,7 +10,7 @@ const FooterLayout = () => {
             <h4 >
             "Knowledge is the key to a good life"
             </h4>
-            <p style={{color:'white',fontSize:'11px',width:'100%',textAlign:'right'}}>Softnix Academy</p>
+            <p style={{color:'white',fontSize:'11px',width:'100%',textAlign:'right'}}>Pet Academy</p>
           </div>
           </div>
           
@@ -19,7 +19,7 @@ const FooterLayout = () => {
     
           <div className="text-center">
             <p style={{margin:"auto"}}>
-            2021 Softnix Techology Co.,Ltd. 
+          ************************************
             </p>
           </div>
         </div>

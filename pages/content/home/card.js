@@ -1,8 +1,11 @@
 import React from 'react';
 import Image from 'react-bootstrap/Image';
+import CardImg from 'react-bootstrap/CardImg';
 import Card from 'react-bootstrap/Card';
 import Link from 'next/link';
 import moment from 'moment'
+
+import 'bootstrap/dist/css/bootstrap.min.css';
 const url ="http://localhost:1337"
 const Cardvideo = (props) => {
  console.log(props)
@@ -16,13 +19,15 @@ const Cardvideo = (props) => {
           title={props.data.Title}
           style={{ cursor: 'pointer' }}
         >
+         
           <Image variant="left" src={`${url}${props.data.Thumbnail}`} style={{ width: '100%',height:'22vh'}} />
+           
           <Card.Body className="px-3" style={{ height: '100px' }}>
             <Card.Subtitle className="mb-2 text-muted">
               <div
                 className="nameClip d-flex align-items flex-column bd-highlight mb-3 "
                 style={{ height: '75px' }}
-              >
+                >
                 <h4 className="p-1 bd-highlight">{props.data.Title}</h4>
 
                 <div className=" mt-auto p-1 bd-highlight ">
@@ -37,6 +42,7 @@ const Cardvideo = (props) => {
         </Card>
       </Link>
     </div>
+   
   );
 };
 

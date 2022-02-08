@@ -1,16 +1,20 @@
 import React, { useState } from 'react';
 import Cardvideo from '../pages/content/home/card';
 import Form from '../pages/content/home/form';
-import { Card, Tabs, Tab } from 'react-bootstrap';
+import { Card, Tabs, Tab, Carousel } from 'react-bootstrap';
 import { GetContent } from './content/api';
+import React from 'react';
+import ReactDOM from 'react-dom';
+import App from './App';
+import 'antd/dist/antd.css';
 
+ReactDOM.render(<App />, document.getElementById('root'));
 const category = {
-  Digital_Marketing: '#90CCFC',
-  Data: '#E6E6FA',
-  Design: '#F4A460',
-  Business: '#F586E9',
- 
-  Technology :'#B5EE69 '
+  // Digital_Marketing: '#90CCFC',
+ //Data: '#E6E6FA',
+  Pet: '#F4A460',
+  Cartoon: '#F586E9',
+   Rabbit :'#B5EE69 '
 
 };
 const imgNotFound = '/uploads/image_not_found_10eedcba0a.png';
@@ -43,16 +47,20 @@ const Home = () => {
   React.useEffect(() => {
     DataContent();
   }, []);
+
   return (
     <div>
-      <div className="row" style={{ marginTop: '20px', marginBottom: '20px' }}>
+      
+      
+       <div  style={{ marginTop: '20px', marginBottom: '20px' }}>
         <div>
           <img
-            className="d-block"
-            style={{ width: '100%', height: '65vh', margin: 'auto' }}
-            src="/SoftnixAcademyWall.jpg"
+            className="d-block w-60"
+            style={{ width: 'auto', height: '65vh', margin: 'auto',border: '1px solid #edece9' }}
+            src="https://www.teahub.io/photos/full/254-2545392_the-secret-life-of-pets-wallpaper-secret-life.jpg"
           />
         </div>
+
       </div>
       <div className="container">
         <Tabs defaultActiveKey="home" id="uncontrolled-tab-example">

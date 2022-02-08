@@ -17,9 +17,10 @@ import 'swiper/components/scrollbar/scrollbar.min.css';
 
 import '../styles/autonimation.css';
 import '../styles/custom.css';
+import { BrowserRouter, Route, Switch } from 'react-router-dom';
 
 
-const Template = ({ Component, pageProps }) => {
+const Template = ({ Component, pageProps, ...appProps }) => {
 const imgNotFound = '/uploads/image_not_found_10eedcba0a.png';
 const [Allvideo, setAllvideo] = React.useState([]);
   const [getsearch, setsearch] = React.useState('');
@@ -59,17 +60,21 @@ const [Allvideo, setAllvideo] = React.useState([]);
     setsearch('');
   };
 
+ 
   React.useEffect(() => {
     setAllvideo(getDataContent);
     setsearch('');
     DataContent();
   }, []);
-
+ 
+  const getLogin = () =>{
+    if([`/login/Signin`].includes(appProps.router.pathname))
+    return <Component {...pageProps} />;
   return (
     <>
       <div className="main-wrapper">
         <Head>
-          <title>Softnix Academy</title>
+          <title>Pet Academy</title>
         </Head>
         <HeaderLayout
           listOfVideo={Allvideo}
@@ -84,5 +89,6 @@ const [Allvideo, setAllvideo] = React.useState([]);
     </>
   );
 };
-
+return getLogin();
+}
 export default Template;

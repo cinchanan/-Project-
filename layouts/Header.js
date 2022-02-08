@@ -42,7 +42,7 @@ const HeaderLayout = (props) => {
           <div className="col-lg-8 ">
             <Link href="/" className="logo">
               <img
-                src="/logosoftnix.png"
+                src="https://www.nicepng.com/png/detail/216-2164807_image-the-secret-life-of-pets-logo-catalanpng.png"
                 style={{
                   width: '100px',
                   height: '40px',
@@ -55,17 +55,20 @@ const HeaderLayout = (props) => {
             </Link>
           </div>
           <div className="col-lg-4">
-            {/* <div className="user-avater" style={{ marginTop: '10px' }}>
-              <img src="http://uitheme.net/vstream/images/user-8.png" alt="user" />
+            <div className="user-avater" style={{ marginTop: '10px' ,marginLeft: '10px'}}>
+              <img src="https://www.kindpng.com/picc/m/24-248253_user-profile-default-image-png-clipart-png-download.png" alt="user" />
               <div className="user-menu">
                 <ul className="w-100 p-0">
                   <li>
-                    <a href="">
-                      <i class="ti-user"></i>My Profile
+                    <Link href="login/signin">
+                    <a>
+                      <i class="ti-user"></i>Login
                     </a>
+                    </Link>
                   </li>
                   <li>
                     <Link href="/content/create/listcontent">
+                  
                     <a>
                       <i class="ti-heart"></i>Content
                     </a>
@@ -78,7 +81,7 @@ const HeaderLayout = (props) => {
                   </li>
                 </ul>
               </div>
-            </div> */}
+            </div>
             <div className="search-div mt-2 mr-0" >
               <input
                 type="text"
@@ -108,6 +111,7 @@ const HeaderLayout = (props) => {
                 )}
               </div>
             </div>
+           
           </div>
         </div>
       </div>

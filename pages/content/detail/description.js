@@ -18,11 +18,11 @@ moment.locale('th')
 
 const Url ="http://localhost:3000/content/"
 const colorBadges = {
-  Digital_Marketing: '#90CCFC',
-  Data: '#E6E6FA',
-  Design: '#F4A460',
-  Business: '#F586E9',
-  Technology :'#B5EE69 '
+  //Digital_Marketing: '#90CCFC',
+ // Data: '#E6E6FA',
+  Pet: '#F4A460',
+  Rabbit: '#F586E9',
+  Cartoon :'#B5EE69 '
 
 };
 
