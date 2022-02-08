@@ -68,7 +68,7 @@ const [Allvideo, setAllvideo] = React.useState([]);
   }, []);
  
   const getLogin = () =>{
-    if([`/login/Signin`].includes(appProps.router.pathname))
+    if([`/login/signin`].includes(appProps.router.pathname))
     return <Component {...pageProps} />;
   return (
     <>
