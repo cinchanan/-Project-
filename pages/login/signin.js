@@ -1,150 +1,103 @@
-// import React, { Component } from 'react';
-// import Box from '@mui/material/Box';
-// import TextField from '@mui/material/TextField';
-// const Signin  = () => {
-
-//   return(
-//     <>
-//  <Box
-//       component="form"
-//       sx={{
-//         '& .MuiTextField-root': { m: 1, width: '25ch' },
-//       }}
-//       noValidate
-//       autoComplete="off"
-//     >
-    
-//       <div>
-//       <TextField
-//           id="outlined-password-input"
-//           label="Email"
-//           type="Email"
-//           autoComplete="current-password"
-//         />
-//       <TextField
-//           id="outlined-password-input"
-//           label="Password"
-//           type="password"
-//           autoComplete="current-password"
-//         />
-//       </div>
-//     </Box>
-//     </>
-//   )
-// }
-// export default Signin
 import * as React from 'react';
 import Avatar from '@mui/material/Avatar';
 import Button from '@mui/material/Button';
 import CssBaseline from '@mui/material/CssBaseline';
 import TextField from '@mui/material/TextField';
 import FormControlLabel from '@mui/material/FormControlLabel';
-import Checkbox from '@mui/material/Checkbox';
-import Link from '@mui/material/Link';
-import Paper from '@mui/material/Paper';
+import Link from 'next/link';
 import Box from '@mui/material/Box';
-import Grid from '@mui/material/Grid';
-//import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
+import AdminPanelSettingsIcon from '@mui/icons-material/AdminPanelSettings';
 import Typography from '@mui/material/Typography';
+import Container from '@mui/material/Container';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
-
-function Copyright(props) {
-  return (
-    <Typography variant="body2" color="text.secondary" align="center" {...props}>
-      {'Copyright © '}
-      <Link color="inherit" href="https://mui.com/">
-        Your Website
-      </Link>{' '}
-      {new Date().getFullYear()}
-      {'.'}
-    </Typography>
-  );
-}
-
+// import { useForm } from "react-hook-form";
+// import { useNavigate } from "react-router-dom";
+import { useRouter } from 'next/router'
 const theme = createTheme();
 
-export default function SignInSide() {
-  const handleSubmit = (event) => {
-    event.preventDefault();
+export default function SignIn() {
+  const router = useRouter()
+  //useForm
+  // const { register, handleSubmit } = useForm({ shouldUseNativeValidation: true });
+  // const onSubmit = async data => { console.log(data); };
+
+   const handleSubmit = (event) => {
+     event.preventDefault()
     const data = new FormData(event.currentTarget);
-    // eslint-disable-next-line no-console
-    console.log({
-      email: data.get('email'),
-      password: data.get('password'),
-    });
+    // console.log({
+    //   email: data.get('email'),
+    //   password: data.get('password'),
+    // });
+    //router.push('/content/create/listcontent')
+    if(data.get('email') =="test@admin.com" && data.get('password') =="123"){
+      alert("Login Success")
+      router.push('/content/create/listcontent')
+          
+    }else{
+      alert("Incorrect password");
+    }
+    
   };
 
   return (
     <ThemeProvider theme={theme}>
-      <Grid container component="main" sx={{ height: '100vh' }}>
+      <Container component="main" maxWidth="xs">
+      
         <CssBaseline />
-        <Grid
-
-          item
-          xs={false}
-          sm={4}
-          md={7}
+        <Box
           sx={{
-             backgroundImage: 'url(https://source.unsplash.com/random)',
-           
-            backgroundRepeat: 'no-repeat',
-            backgroundColor: (t) =>
-              t.palette.mode === 'light' ? t.palette.grey[50] : t.palette.grey[900],
-            backgroundSize: 'cover',
-            backgroundPosition: 'center',
+            marginTop: 8,
+            display: 'flex',
+            flexDirection: 'column',
+            alignItems: 'center',
           }}
-        />
-        <Grid item xs={12} sm={8} md={5} component={Paper} elevation={6} square>
-          <Box
-            sx={{
-              my: 8,
-              mx: 4,
-              display: 'flex',
-              flexDirection: 'column',
-              alignItems: 'center',
-            }}
-          >
-            <Avatar sx={{ m: 1}}>
-              {/* <LockOutlinedIcon /> */}
-            </Avatar>
-            <Typography component="h1" variant="h5">
-              Sign in
-            </Typography>
-            <Box component="form" noValidate onSubmit={handleSubmit} sx={{ mt: 1 }}>
-              <TextField
-                margin="normal"
-                required
-                fullWidth
-                id="email"
-                label="Email Address"
-                name="email"
-                autoComplete="email"
-                autoFocus
+        >
+          <Avatar sx={{ m: 1, bgcolor: 'primary.main' }}>
+        
+           <AdminPanelSettingsIcon />
+          </Avatar>
+          
+          <Typography component="h1" variant="h5">
+            Sign in
+          </Typography>
+          <form onSubmit={handleSubmit}>
+          {/* <form onSubmit={handleSubmit(onSubmit)}> */}
+          {/* <Box component="form" onSubmit={handleSubmit} noValidate sx={{ mt: 1 }}> */}
+            <TextField
+              margin="normal"
+             required
+              fullWidth
+              id="email"
+              label="Email Address"
+              name="email"
+              autoComplete="email"
+              autoFocus
               />
-              <TextField
-                margin="normal"
-                required
-                fullWidth
-                name="password"
-                label="Password"
-                type="password"
-                id="password"
-                autoComplete="current-password"
-              />
-             
-              <Button
-                type="submit"
-                fullWidth
-                variant="contained"
-                sx={{ mt: 3, mb: 2 }}
-              >
-                Sign In
-              </Button>
-            
-            </Box>
-          </Box>
-        </Grid>
-      </Grid>
+            <TextField
+              margin="normal"
+              required
+              fullWidth
+              name="password"
+              label="Password"
+              type="password"
+              id="password"
+              autoComplete="current-password"
+          />
+          
+            <Button
+              type="submit"
+              fullWidth
+              variant="contained"
+              sx={{ mt: 3, mb: 2 }}
+              
+            >
+              Sign In
+            </Button>
+            </form>
+          {/* </Box> */}
+        </Box>
+          
+      </Container>
     </ThemeProvider>
   );
 }

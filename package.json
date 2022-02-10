@@ -21,6 +21,7 @@
     "@material-ui/data-grid": "^4.0.0-alpha.22",
     "@material-ui/icons": "^4.11.2",
     "@material-ui/lab": "^4.0.0-alpha.57",
+    "@mui/icons-material": "^5.4.1",
     "@mui/material": "^5.4.1",
     "@react-icons/all-files": "^4.1.0",
     "axios": "^0.21.4",

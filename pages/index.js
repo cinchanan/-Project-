@@ -3,12 +3,9 @@ import Cardvideo from '../pages/content/home/card';
 import Form from '../pages/content/home/form';
 import { Card, Tabs, Tab, Carousel } from 'react-bootstrap';
 import { GetContent } from './content/api';
-import React from 'react';
-import ReactDOM from 'react-dom';
-import App from './App';
-import 'antd/dist/antd.css';
 
-ReactDOM.render(<App />, document.getElementById('root'));
+
+
 const category = {
   // Digital_Marketing: '#90CCFC',
  //Data: '#E6E6FA',

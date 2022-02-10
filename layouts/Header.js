@@ -66,19 +66,7 @@ const HeaderLayout = (props) => {
                     </a>
                     </Link>
                   </li>
-                  <li>
-                    <Link href="/content/create/listcontent">
-                  
-                    <a>
-                      <i class="ti-heart"></i>Content
-                    </a>
-                    </Link>
-                  </li>
-                  <li>
-                    <a href="home.html">
-                      <i class="ti-power-off"></i>Log Out
-                    </a>
-                  </li>
+                 
                 </ul>
               </div>
             </div>
