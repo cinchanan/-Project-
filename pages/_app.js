@@ -1,6 +1,6 @@
 import React from 'react';
 import Head from 'next/head'
-
+import { useRouter } from "next/router";
 import HeaderLayout from '../layouts/Header';
 import FooterLayout from '../layouts/Footer';
 import { GetContent } from './content/api';
@@ -17,7 +17,7 @@ import 'swiper/components/scrollbar/scrollbar.min.css';
 
 import '../styles/autonimation.css';
 import '../styles/custom.css';
-import { BrowserRouter, Route, Switch } from 'react-router-dom';
+
 
 
 const Template = ({ Component, pageProps, ...appProps }) => {
@@ -66,9 +66,11 @@ const [Allvideo, setAllvideo] = React.useState([]);
     setsearch('');
     DataContent();
   }, []);
- 
+  const router = useRouter();
+  console.log(router.asPath)
   const getLogin = () =>{
-    if([`/login/signin`].includes(appProps.router.pathname))
+    if([`/login/signin`,`/content/create/listcontent`,`/content/create/[id]`].includes(appProps.router.pathname))
+  
     return <Component {...pageProps} />;
   return (
     <>
@@ -76,7 +78,7 @@ const [Allvideo, setAllvideo] = React.useState([]);
         <Head>
           <title>Pet Academy</title>
         </Head>
-        <HeaderLayout
+         <HeaderLayout
           listOfVideo={Allvideo}
           search={search}
           getsearch={getsearch}
