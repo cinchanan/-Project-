@@ -31,11 +31,7 @@ const HeaderLayout = (props) => {
   return (
     <div
       className="header-wrapper py-3"
-      style={{
-        boxShadow: '1px 0px 1px 0px rgba(50,50,50,.8);',
-        paddingTop: '0px !important',
-        paddingBottom: '0px !important',
-      }}
+
     >
       <div className="container">
         <div className="row">

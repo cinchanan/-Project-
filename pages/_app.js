@@ -3,6 +3,7 @@ import Head from 'next/head'
 import { useRouter } from "next/router";
 import HeaderLayout from '../layouts/Header';
 import FooterLayout from '../layouts/Footer';
+import HeaderAdminLayout  from '../layouts/HeaderAdmin';
 import { GetContent } from './content/api';
 import 'react-perfect-scrollbar/dist/css/styles.css';
 import 'plyr-react/dist/plyr.css';
@@ -71,7 +72,15 @@ const [Allvideo, setAllvideo] = React.useState([]);
   const getLogin = () =>{
     if([`/login/signin`,`/content/create/listcontent`,`/content/create/[id]`].includes(appProps.router.pathname))
   
-    return <Component {...pageProps} />;
+    return (
+      <div className="main-wrapper">
+      <Head>
+        <title>Pet Academy</title>
+      </Head>
+      <HeaderAdminLayout/>
+    <Component {...pageProps} />
+    <FooterLayout />
+    </div>);
   return (
     <>
       <div className="main-wrapper">
