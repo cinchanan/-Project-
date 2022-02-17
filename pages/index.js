@@ -1,39 +1,36 @@
-import React, { useState } from 'react';
-import Cardvideo from '../pages/content/home/card';
-import Form from '../pages/content/home/form';
-import { Card, Tabs, Tab, Carousel } from 'react-bootstrap';
-import { GetContent } from './content/api';
-
-
+import React, { useState } from "react";
+import Cardvideo from "../pages/content/home/card";
+import Form from "../pages/content/home/form";
+import { Card, Tabs, Tab, Carousel } from "react-bootstrap";
+import { GetContent } from "./content/api";
 
 const category = {
   // Digital_Marketing: '#90CCFC',
- //Data: '#E6E6FA',
-  Pet: '#F4A460',
-  Cartoon: '#F586E9',
-   Rabbit :'#B5EE69 '
-
+  //Data: '#E6E6FA',
+  Pet: "#F4A460",
+  Cartoon: "#F586E9",
+  Rabbit: "#B5EE69 ",
 };
-const imgNotFound = '/uploads/image_not_found_10eedcba0a.png';
+const imgNotFound = "/uploads/image_not_found_10eedcba0a.png";
 const Home = () => {
-  
   const [getDataContent, setDataContent] = useState([]);
 
   const DataContent = async () => {
     const { data } = await GetContent();
     if (data) {
       let new_data = data.map((item, index) => {
-      //   console.log(item);
+        //   console.log(item);
         return {
           id: item.id,
           ContentType: item.ContentType,
           Author: item.Author,
           Title: item.Title,
-          Thumbnail: item.Thumbnail.length > 0 ? item.Thumbnail[0].url : imgNotFound,
+          Thumbnail:
+            item.Thumbnail.length > 0 ? item.Thumbnail[0].url : imgNotFound,
           category: item.Category.map((item) => {
             return item.Name_Ctgr;
           }),
-          Create:item.created_at
+          Create: item.created_at,
         };
       });
       // console.log(new_data);
@@ -47,23 +44,49 @@ const Home = () => {
 
   return (
     <div>
-      
-      
-       <div  style={{ marginTop: '20px', marginBottom: '20px' }}>
+      <div style={{ marginTop: "20px", marginBottom: "20px" }}>
         <div>
-          <img
+          {/* <img
             className="d-block w-60"
             style={{ width: 'auto', height: '65vh', margin: 'auto',border: '1px solid #edece9' }}
             src="https://www.teahub.io/photos/full/254-2545392_the-secret-life-of-pets-wallpaper-secret-life.jpg"
-          />
+          /> */}
+          <Carousel>
+            <Carousel.Item interval={1000}>
+              <img
+                className="d-block"
+              
+                src="https://www.teahub.io/photos/full/254-2545392_the-secret-life-of-pets-wallpaper-secret-life.jpg"
+                alt="First slide"
+              />
+             
+            </Carousel.Item>
+            <Carousel.Item interval={500}>
+              <img
+                className="d-block "
+               
+                src="http://s359.kapook.com/pagebuilder/5982b3e2-a0ab-4c15-84bf-00a23cbce312.jpg"
+                alt="Second slide"
+              />
+             
+            </Carousel.Item>
+            <Carousel.Item>
+              <img
+                className="d-block "
+              
+                src="https://www.patsonic.com/wp-content/uploads/2008/06/kungfu-panda-featured.jpg"
+                alt="Third slide"
+              />
+             
+            </Carousel.Item>
+          </Carousel>
         </div>
-
       </div>
       <div className="container">
         <Tabs defaultActiveKey="home" id="uncontrolled-tab-example">
           <Tab eventKey="home" title="All Video">
-            <div className="row" style={{ paddingTop: '20px' }}>
-              {' '}
+            <div className="row" style={{ paddingTop: "20px" }}>
+              {" "}
               {getDataContent.map((value, index) => {
                 return (
                   <div className="col-3">
@@ -79,8 +102,11 @@ const Home = () => {
             });
 
             return (
-              <Tab eventKey={value} title={value.charAt(0).toUpperCase() + value.slice(1)}>
-                <div className="row" style={{ paddingTop: '20px' }}>
+              <Tab
+                eventKey={value}
+                title={value.charAt(0).toUpperCase() + value.slice(1)}
+              >
+                <div className="row" style={{ paddingTop: "20px" }}>
                   {filtercategory.map((value, index) => {
                     return (
                       <div className="col-3">

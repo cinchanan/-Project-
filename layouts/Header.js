@@ -38,7 +38,8 @@ const HeaderLayout = (props) => {
           <div className="col-lg-8 ">
             <Link href="/" className="logo">
               <img
-                src="https://www.nicepng.com/png/detail/216-2164807_image-the-secret-life-of-pets-logo-catalanpng.png"
+                 src="https://mir-s3-cdn-cf.behance.net/project_modules/disp/a22e0624574141.56336829bf1d4.png"
+                // src="https://upload.wikimedia.org/wikipedia/commons/5/54/STAR_Movies_logo.svg"
                 style={{
                   width: '100px',
                   height: '40px',
@@ -58,7 +59,7 @@ const HeaderLayout = (props) => {
                   <li>
                     <Link href="login/signin">
                     <a>
-                      <i class="ti-user"></i>Login
+                      <i className="ti-user"></i>Login
                     </a>
                     </Link>
                   </li>

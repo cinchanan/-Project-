@@ -1,6 +1,5 @@
 import Link from 'next/link';
-import React, { useEffect, useState } from 'react';
-import { useRouter } from 'next/router';
+import React from 'react';
 
 const HeaderAdminLayout = () => {
 
@@ -15,7 +14,7 @@ const HeaderAdminLayout = () => {
           <div className="col-lg-8 ">
        
               <img
-                src="https://www.nicepng.com/png/detail/216-2164807_image-the-secret-life-of-pets-logo-catalanpng.png"
+                src="https://mir-s3-cdn-cf.behance.net/project_modules/disp/a22e0624574141.56336829bf1d4.png"
                 style={{
                   width: '100px',
                   height: '40px',

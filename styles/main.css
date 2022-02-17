@@ -6728,6 +6728,10 @@ button.bg-dark:focus {
 
 .d-block {
   display: block !important;
+  width: auto  !important;
+   height: 65vh  !important;
+    margin: auto  !important;
+    border: 1px solid #edece9  !important ;
 }
 
 .d-table {
